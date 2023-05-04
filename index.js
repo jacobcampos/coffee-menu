@@ -5,13 +5,13 @@ const coffee = coffeeMenu.map( entry => entry.name)
 console.log(coffee)
 
 //prompt 3
-const drink = coffeeMenu.filter(drink => drink.price == 5 );
-console.log(...drink)
+const drink = coffeeMenu.filter(drink => drink.price == 5 ).map( drink => drink.name);
+console.log(drink)
 
 
 //prompt 4
-const even = coffeeMenu.filter(drink => drink.price %2 === 0 );
-console.log(...even)
+const even = coffeeMenu.filter(drink => drink.price %2 === 0 ).map( drink => drink.name);
+console.log(even)
 
 //prompt 5
 function sumdrink(array) {
@@ -26,8 +26,10 @@ function sumdrink(array) {
 }
 sumdrink(coffeeMenu)
 
-//prompt 6 & 7 
-const seasonal = coffeeMenu.filter(drink => drink.seasonal == true );
-console.log(...seasonal)
-console.log (`affogato is with imported beans` )
-console.log (`cuban espresso is with imported beans` )
+//prompt 6 
+const seasonal = coffeeMenu.filter(drink => drink.seasonal == true ).map( drink => drink.name);
+console.log(seasonal)
+
+//prompt 7
+const seasonalbeans = seasonal.map(drink => `${drink} with imported beans`)
+console.log(seasonalbeans)
